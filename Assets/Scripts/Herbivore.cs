@@ -7,7 +7,7 @@ public class Herbivore : Animal
 
     public GameObject preditor = null;
     public float distanceFromPreditor;
-    public int health = 1000;
+    private int health = 1000;
     private int meat = 1000;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,7 @@ public class Herbivore : Animal
         if (other.CompareTag("Dog") && animalState != AnimalState.Dead) InflictDamage();
     }
 
+    // ENCAPSULATION
     public void InflictDamage()
     {
         health -= 1;
@@ -56,6 +57,7 @@ public class Herbivore : Animal
         return meatToGive;
     }
 
+    // POLYMORPHISM
     protected override void NextMove()
     {
         if (energy < 10)
